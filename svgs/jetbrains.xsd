@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="svg">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="defs">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="linearGradient">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="stop" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:attribute name="stop-color" use="required" />
+                                                <xs:attribute name="offset" type="xs:decimal" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required" />
+                                    <xs:attribute name="x1" type="xs:decimal" use="required" />
+                                    <xs:attribute name="x2" type="xs:decimal" use="required" />
+                                    <xs:attribute name="y1" type="xs:decimal" use="required" />
+                                    <xs:attribute name="y2" type="xs:decimal" use="required" />
+                                    <xs:attribute name="gradientUnits" use="required" />
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="path" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:attribute name="fill" use="required" />
+                        <xs:attribute name="d" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="fill" use="required" />
+            <xs:attribute name="viewBox" use="required" />
+            <xs:attribute name="class" use="required" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
